@@ -1,6 +1,6 @@
 spack:
   specs:
-    - xios@2701
+    - xios@3.0.0
     - yaxt@0.11.3 idxtype=long
     - pfunit +mpi +openmp
     - tau +mpi +openmp +opari ~pthreads +lfric

@@ -14,7 +14,7 @@ source "$SITE_DIR/env.sh"
 QSUB_FLAGS=(
     -P "$PROJECT" \
     -l jobfs=50gb \
-    -l storage=gdata/access+gdata/ki32 \
+    -l storage=gdata/access+gdata/ki32+gdata/"$PROJECT"+scratch/"$PROJECT" \
     -l wd \
     -j oe \
     -W umask=0022 \
@@ -50,6 +50,7 @@ if ! [[ -v NGMOENVS_DEBUG ]]; then
         -l walltime=2:00:00 \
         -l mem=32gb \
         -l jobfs=50gb \
+        -l storage=gdata/access+gdata/ki32+gdata/"$PROJECT"+scratch/"$PROJECT" \
         "${QSUB_FLAGS[@]}" \
         -W block=true \
         -- bash "$SITE_DIR/install-stage-two.sh" "$ENVIRONMENT"
@@ -72,6 +73,7 @@ else
         -l walltime=2:00:00 \
         -l mem=32gb \
         -l jobfs=50gb \
+        -l storage=gdata/access+gdata/ki32+gdata/"$PROJECT"+scratch/"$PROJECT" \
         "${QSUB_FLAGS[@]}" \
         -I
 fi

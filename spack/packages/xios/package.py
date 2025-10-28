@@ -19,6 +19,8 @@ class Xios(BaseXios):
     version("2252", revision=2252, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
     version("2663", revision=2663, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
     version("2701", revision=2701, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
+    #version("3.0.0", branch="main", git="git@github.com:MetOffice/tcd-XIOS3-extras.git")
+    version("3.0.0", git="/g/data/dp9/dl9118/tcd-XIOS3-extras")
 
     variant("oasis", default=False, description="enable OASIS support")
 
@@ -27,7 +29,7 @@ class Xios(BaseXios):
     depends_on("oasis", type="build", when="+oasis")
 
     # Fixup hashing
-    patch("lfric_xios2.2629.patch", when="%intel")
+    #patch("lfric_xios2.2629.patch", when="%intel")
 
     def patch(self):
 
