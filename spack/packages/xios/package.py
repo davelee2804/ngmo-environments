@@ -18,7 +18,8 @@ class Xios(BaseXios):
     version("develop", svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
     version("2252", revision=2252, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
     version("2663", revision=2663, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
-    version("2701", revision=2701, svn="https://forge.ipsl.fr/ioserver/svn/XIOS2/trunk")
+    version("2701", git="https://gitlab.in2p3.fr/ipsl/projets/xios-projects/xios.git", \
+            commit="2eb572f0986eca19031eb6c294d116646010687c")
 
     variant("oasis", default=False, description="enable OASIS support")
 
